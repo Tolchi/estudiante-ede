@@ -1,0 +1,103 @@
+<%= simple_form_for(@estudiante) do |f| %>
+  <% if @estudiante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
+
+      <ul>
+      <% @estudiante.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido %><br>
+    <%= f.text_field :apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_casa %><br>
+    <%= f.text_field :tel_casa %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_trabajo %><br>
+    <%= f.text_field :tel_trabajo %>
+  </div>
+  <div class="field">
+    <%= f.label :celular %><br>
+    <%= f.text_field :celular %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.input :tipo_documento, default: :DNI %>
+  </div>
+  <div class="field">
+    <%= f.label :nro_documento %><br>
+    <%= f.text_field :nro_documento %>
+  </div>
+  <div class="field">
+    <%= f.label :vigencia_pasaporte %><br>
+    <%= f.text_field :vigencia_pasaporte %>
+  </div>
+  <div class="field">
+    <%= f.input :nacionalidad, default: :Argentina %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nac %><br>
+    <%= f.date_select :fecha_nac, start_year: 1950 %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br>
+    <%= f.input :sexo, :as => :radio_buttons %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_civil %><br>
+    <%= f.input :estado_civil, :as => :radio_buttons %>
+  </div>
+  <div class="field trabaja">
+    <%= f.label :trabaja %><br>
+    <%= f.input :trabaja, as: :boolean %>
+  </div>
+	<div id="Empresa">
+	   <div class="field">
+	    <%= f.label :empresa %><br>
+	    <%= f.input :empresa %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :cargo %><br>
+	    <%= f.input :cargo %>
+	  </div>
+  </div>
+	<div id="Universidad">
+	  <div class="field">
+	    <%= f.label :universidad %><br>
+	    <%= f.input :universidad %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :carrera %><br>
+	    <%= f.input :carrera %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :anio %><br>
+	    <%= f.input :anio %>
+	  </div>
+	</div>
+	<div class="field">
+		<%= f.label :talento %>
+		<%= f.input :talento %>
+	</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

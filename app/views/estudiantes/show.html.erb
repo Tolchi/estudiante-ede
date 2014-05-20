@@ -1,0 +1,98 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @estudiante.name %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @estudiante.apellido %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @estudiante.direccion %>
+</p>
+
+<p>
+  <strong>Tel_casa:</strong>
+  <%= @estudiante.tel_casa %>
+</p>
+
+<p>
+  <strong>Tel_trabajo:</strong>
+  <%= @estudiante.tel_trabajo %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @estudiante.celular %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @estudiante.email %>
+</p>
+
+<p>
+  <strong>Tipo_documento:</strong>
+  <%= @estudiante.tipo_documento %>
+</p>
+
+<p>
+  <strong>Nro_documento:</strong>
+  <%= @estudiante.nro_documento %>
+</p>
+
+<p>
+  <strong>Vigencia pasaporte:</strong>
+  <%= @estudiante.vigencia_pasaporte %>
+</p>
+<p>
+  <strong>Nacionalidad:</strong>
+  <%= @estudiante.nacionalidad %>
+</p>
+
+<p>
+  <strong>Fecha de Nacimiento:</strong>
+  <%= @estudiante.fecha_nac %>
+</p>
+<p>
+  <strong>Estado civil:</strong>
+  <%= @estudiante.estado_civil %>
+</p>
+<p>
+  <strong>Sexo:</strong>
+  <%= @estudiante.sexo %>
+</p>
+<% if @estudiante.trabaja? %>
+<p>
+  <strong>Empresa:</strong>
+  <%= @estudiante.empresa %>
+</p>
+<p>
+  <strong>Cargo:</strong>
+  <%= @estudiante.cargo %>
+</p>
+<% else %>
+<p>
+  <strong>Universidad:</strong>
+  <%= @estudiante.universidad %>
+</p>
+<p>
+  <strong>Carrera:</strong>
+  <%= @estudiante.carrera %>
+</p>
+<p>
+  <strong>Año:</strong>
+  <%= @estudiante.anio %>
+</p>
+<p>
+	<strong>Talento</strong>
+	<%= @estudiante.talento %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_estudiante_path(@estudiante) %> |
+<%= link_to 'Back', estudiantes_path %>

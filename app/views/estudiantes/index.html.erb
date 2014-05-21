@@ -1,51 +1,41 @@
 _<h1>Listing estudiantes</h1>
-
-<table>
+<div class="row">
+<table class="table table-striped table-responsive table-hover">
   <thead>
     <tr>
-      <th>Name,</th>
-      <th>Apellido,</th>
-      <th>Direccion,</th>
-      <th>Tel_casa,</th>
-      <th>Tel_trabajo,</th>
-      <th>Celular,</th>
-      <th>Email,</th>
-      <th>Tipo_documento,</th>
-      <th>Nro_documento,</th>
-      <th>Nacionalidad,fnac</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+      <th>Direccion</th>
+      <th>Tel_casa</th>
+      <th>Tel_trabajo</th>
+      <th>Celular</th>
+      <th>Email</th>
+			<th>Fecha de Nacimiento</th>
+			<th>Estado Civil</th>
+			<th>Sexo</th>
+			<th>Talento</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @estudiantes.each do |estudiante| %>
-      <tr>
-        <td><%= estudiante.name %></td>
+    	<tr>
+				<% @estudiantes.each do |estudiante| %>
+        <td><%= link_to estudiante.name, estudiante %></td>
         <td><%= estudiante.apellido %></td>
         <td><%= estudiante.direccion %></td>
         <td><%= estudiante.tel_casa %></td>
         <td><%= estudiante.tel_trabajo %></td>
         <td><%= estudiante.celular %></td>
         <td><%= estudiante.email %></td>
-        <td><%= estudiante.tipo_documento %></td>
-        <td><%= estudiante.nro_documento %></td>
-        <td><%= estudiante.nacionalidad %></td>
-				<td><%= estudiante.vigencia_pasaporte %></td>
         <td><%= estudiante.fecha_nac %></td>
         <td><%= estudiante.estado_civil %></td>
         <td><%= estudiante.sexo %></td>
-        <% if estudiante.trabaja? %>
-				<td><%= estudiante.empresa %></td>
-        <td><%= estudiante.cargo %></td>
-				<% else %>
-        <td><%= estudiante.universidad %></td>
-        <td><%= estudiante.carrera %></td>
-        <td><%= estudiante.anio %></td>
 				<td><%= estudiante.talento %></td>
-				<% end %>
-        <td><%= link_to 'Show', estudiante %></td>
-        <td><%= link_to 'Edit', edit_estudiante_path(estudiante) %></td>
-        <td><%= link_to 'Destroy', estudiante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+					<%= link_to 'Edit', edit_estudiante_path(estudiante), class: 'btn btn-mini btn-warning' %>
+        	<%= link_to 'Destroy', estudiante, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
+				</td>
       </tr>
     <% end %>
   </tbody>
@@ -53,4 +43,5 @@ _<h1>Listing estudiantes</h1>
 
 <br>
 
-<%= link_to 'New Estudiante', new_estudiante_path %>
+<%= link_to 'Agregar estudiante', new_estudiante_path, class: 'btn btn-large btn-primary' %>
+</div>

@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Estudiantes") do |sheet|
+	sheet.add_row ["Nombre","Apellido","Direccion", "Tel_Casa","Tel_Trabajo","Celular","eMail", "Tipo_Documento","Nro_Documento", "Nacionalidad", "Vigencia_Pasaporte", "Sexo", "Fecha_Nac","Estado_Civil","Empresa","Cargo","Universidad","Carrera","Año","Talento"]
+  @estudiantes.each do |estudiante|
+    sheet.add_row [estudiante.name, estudiante.apellido, estudiante.direccion, estudiante.tel_casa, estudiante.tel_trabajo, estudiante.celular, estudiante.email, estudiante.tipo_documento, estudiante.nro_documento, estudiante.nacionalidad, estudiante.vigencia_pasaporte, estudiante.sexo, estudiante.fecha_nac, estudiante.estado_civil, estudiante.empresa, estudiante.cargo, estudiante.universidad, estudiante.carrera, estudiante.anio, estudiante.talento]
+  end
+end

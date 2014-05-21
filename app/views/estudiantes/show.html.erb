@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @estudiante.name %>
 </p>
 
@@ -88,11 +88,13 @@
   <strong>Año:</strong>
   <%= @estudiante.anio %>
 </p>
+
+<% end %>
 <p>
 	<strong>Talento</strong>
 	<%= @estudiante.talento %>
 </p>
-<% end %>
 
-<%= link_to 'Edit', edit_estudiante_path(@estudiante) %> |
-<%= link_to 'Back', estudiantes_path %>
+<%= link_to 'Editar', edit_estudiante_path(@estudiante), class: 'btn btn-large btn-primary' %> |
+<%= link_to 'Atras', estudiantes_path, class: 'btn btn-large' %>
+<%= link_to 'Agregar estudiante', new_estudiante_path, class: 'btn btn-large btn-info' %>

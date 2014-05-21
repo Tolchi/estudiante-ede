@@ -3,6 +3,7 @@ class EstudiantesController < ApplicationController
 
   # GET /estudiantes
   # GET /estudiantes.json
+  # GET /estudiantes.xlsx
   def index
     @estudiantes = Estudiante.all
   end
@@ -69,6 +70,6 @@ class EstudiantesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estudiante_params
-      params.require(:estudiante).permit(:name, :apellido, :direccion, :tel_casa, :tel_trabajo, :celular, :email, :tipo_documento, :nro_documento, :nacionalidad, :sexo, :Fnac, :estado_civil, :trabaja, :empresa, :cargo, :universidad, :carrera, :anio, :talento)
+      params.require(:estudiante).permit(:name, :apellido, :direccion, :tel_casa, :tel_trabajo, :celular, :email, :tipo_documento, :nro_documento, :nacionalidad, :vigencia_pasaporte, :sexo, :fecha_nac, :estado_civil, :trabaja, :empresa, :cargo, :universidad, :carrera, :anio, :talento)
     end
 end

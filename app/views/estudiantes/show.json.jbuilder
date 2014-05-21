@@ -1,1 +1,1 @@
-json.extract! @estudiante, :id, :name,, :apellido,, :direccion,, :tel-casa,, :tel-trabajo,, :celular,, :email,, :tipo-documento,, :nro-documento,, :nacionalidad,Fnac, :created_at, :updated_at
+json.extract! @estudiante, :id, :name, :apellido, :direccion, :tel_casa, :tel_trabajo, :celular, :email, :tipo_documento, :nro_documento, :vigencia_pasaporte, :nacionalidad,:fecha_nac, :sexo, :estado_civil, :empresa, :cargo, :universidad, :carrera, :anio, :talento :created_at, :updated_at

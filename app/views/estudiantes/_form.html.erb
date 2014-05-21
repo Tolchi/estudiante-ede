@@ -1,4 +1,4 @@
-<%= simple_form_for(@estudiante) do |f| %>
+<%= simple_form_for(@estudiante, class: 'form-horizontal' ) do |f| %>
   <% if @estudiante.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
@@ -11,93 +11,180 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :name,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :name, autofocus: true %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :apellido %><br>
-    <%= f.text_field :apellido %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :apellido,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :apellido %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :direccion %><br>
-    <%= f.text_field :direccion %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :direccion,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :direccion %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :tel_casa %><br>
-    <%= f.text_field :tel_casa %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :tel_casa,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :tel_casa %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :tel_trabajo %><br>
-    <%= f.text_field :tel_trabajo %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :tel_trabajo,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :tel_trabajo %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :celular %><br>
-    <%= f.text_field :celular %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :celular,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :celular %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :email,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :email %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.input :tipo_documento, default: :DNI %>
+  <div class="form-group">
+		<div class="row">
+			<%= f.label :tipo_documento,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.input :tipo_documento, default: :DNI %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :nro_documento %><br>
-    <%= f.text_field :nro_documento %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :nro_documento,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :nro_documento %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :vigencia_pasaporte %><br>
-    <%= f.text_field :vigencia_pasaporte %>
+  <div class="form-group">
+		<div class="row">
+			<%= f.label :nacionalidad,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.input :nacionalidad, default: :Argentina %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.input :nacionalidad, default: :Argentina %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :vigencia_pasaporte,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.text_field :vigencia_pasaporte %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :fecha_nac %><br>
-    <%= f.date_select :fecha_nac, start_year: 1950 %>
+  <div class="form-group">
+		<div class="row">
+	    <%= f.label :fecha_nac,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.date_select :fecha_nac, start_year: 1950 %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :sexo %><br>
-    <%= f.input :sexo, :as => :radio_buttons %>
+  <div class="form-group">
+		<div class="row">
+			<%= f.label :sexo,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.input :sexo, :as => :radio_buttons %>
+			</div>
+		</div>
   </div>
-  <div class="field">
-    <%= f.label :estado_civil %><br>
-    <%= f.input :estado_civil, :as => :radio_buttons %>
+  <div class="form-group">
+		<div class="row">
+			<%= f.label :estado_civil,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.input :estado_civil, :as => :radio_buttons %>
+			</div>
+		</div>
   </div>
-  <div class="field trabaja">
-    <%= f.label :trabaja %><br>
-    <%= f.input :trabaja, as: :boolean %>
+  <div class="form-group trabaja">
+		<div class="row">
+			<%= f.label :trabaja,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+		    <%= f.input :trabaja, as: :boolean %>
+			</div>
+		</div>
   </div>
 	<div id="Empresa">
-	   <div class="field">
-	    <%= f.label :empresa %><br>
-	    <%= f.input :empresa %>
+	   <div class="form-group">
+			 <div class="row">
+				 <%= f.label :empresa,  class: "col-xs-2 control-label" %>
+		     <div class="col-xs-10">
+					 <%= f.input :empresa %>
+				 </div>
+			 </div>
 	  </div>
-	  <div class="field">
-	    <%= f.label :cargo %><br>
-	    <%= f.input :cargo %>
+	  <div class="form-group">
+			<div class="row">
+				<%= f.label :cargo,  class: "col-xs-2 control-label" %>
+				<div class="col-xs-10">
+			    <%= f.input :cargo %>
+				</div>
+			</div>
 	  </div>
   </div>
 	<div id="Universidad">
-	  <div class="field">
-	    <%= f.label :universidad %><br>
-	    <%= f.input :universidad %>
+	  <div class="form-group">
+			<div class="row">
+				<%= f.label :universidad,  class: "col-xs-2 control-label" %>
+				<div class="col-xs-10">
+			    <%= f.input :universidad %>
+				</div>
+			</div>
 	  </div>
-	  <div class="field">
-	    <%= f.label :carrera %><br>
-	    <%= f.input :carrera %>
+	  <div class="form-group">
+			<div class="row">
+				<%= f.label :carrera,  class: "col-xs-2 control-label" %>
+				<div class="col-xs-10">
+			    <%= f.input :carrera %>
+				</div>
+			</div>
 	  </div>
-	  <div class="field">
-	    <%= f.label :anio %><br>
-	    <%= f.input :anio %>
+	  <div class="form-group">
+			<div class="row">
+				<%= f.label :anio,  class: "col-xs-2 control-label" %>
+				<div class="col-xs-10">
+			    <%= f.input :anio %>
+				</div>
+			</div>
 	  </div>
 	</div>
-	<div class="field">
-		<%= f.label :talento %>
-		<%= f.input :talento %>
+	<div class="form-group">
+		<div class="row">
+			<%= f.label :talento,  class: "col-xs-2 control-label" %>
+			<div class="col-xs-10">
+				<%= f.input :talento %>
+			</div>
+		</div>
 	</div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit 'Agregar estudiante', class: 'btn btn-large btn-primary' %>
   </div>
+
 <% end %>

@@ -1,11 +1,12 @@
 class EstudiantesController < ApplicationController
   before_action :set_estudiante, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /estudiantes
   # GET /estudiantes.json
   # GET /estudiantes.xlsx
   def index
-    @estudiantes = Estudiante.all
+    @estudiantes = Estudiante.all.order_by(sort_column + ' ' + sort_direction)
   end
 
   # GET /estudiantes/1
@@ -63,6 +64,13 @@ class EstudiantesController < ApplicationController
   end
 
   private
+    def sort_column
+      Estudiante.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+    
+    def sort_direction
+      %w[ASC DESC].include?(params[:direction]) ? params[:direction] : "ASC"
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_estudiante
       @estudiante = Estudiante.find(params[:id])

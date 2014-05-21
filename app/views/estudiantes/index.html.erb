@@ -5,14 +5,15 @@ _<h1>Listing estudiantes</h1>
 <table class="table table-striped table-responsive table-hover">
   <thead>
     <tr>
-			<th>Nombre</th>
-			<th>Apellido</th>
+			<th><%= sortable "name", "Nombre" %></th>
+			<th><%= sortable "apellido", "Apellido" %></th>
       <th>Direccion</th>
       <th>Tel_casa</th>
       <th>Tel_trabajo</th>
       <th>Celular</th>
       <th>Email</th>
-			<th>Fecha de Nacimiento</th>
+			<th><%= sortable  "fecha_nac", "Fecha de Nacimiento" %></th>
+			<th><%= sortable "nacionalidad", "Nacionalidad" %></th>
 			<th>Estado Civil</th>
 			<th>Sexo</th>
 			<th>Talento</th>
@@ -31,6 +32,7 @@ _<h1>Listing estudiantes</h1>
         <td><%= estudiante.celular %></td>
         <td><%= estudiante.email %></td>
         <td><%= estudiante.fecha_nac %></td>
+				<td><%= estudiante.nacionalidad %></td>
         <td><%= estudiante.estado_civil %></td>
         <td><%= estudiante.sexo %></td>
 				<td><%= estudiante.talento %></td>

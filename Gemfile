@@ -44,3 +44,4 @@ gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 gem 'mongoid-sadstory'
 gem 'axlsx_rails'
+gem 'irbtools', group: :development

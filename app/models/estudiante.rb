@@ -30,4 +30,8 @@ class Estudiante
   field :carrera, type: String
   field :anio, type: String
   field :talento, type: String
+  
+  def self.column_names
+    self.fields.collect { |field| field[0] }
+  end
 end

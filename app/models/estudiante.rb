@@ -1,6 +1,10 @@
 class Estudiante
   include Mongoid::Document
   extend Enumerize
+  validates :name, :apellido, presence: true
+  validates :email, uniqueness: true
+  validates :name, uniqueness:{scope: :apellido}
+  validates :nro_documento, uniqueness:{scope: :tipo_documento}
   field :name, type: String
   field :apellido, type: String
   field :direccion, type: String

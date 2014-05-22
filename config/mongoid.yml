@@ -28,6 +28,14 @@ development:
         # operation on failure. (default: 1)
         # retry_interval: 1
   # Configure Mongoid specific options. (optional)
+production:
+	sessions:
+		default:
+			uri: <%= ENV['MONGHQ_URL'] %>
+			options:
+				consistency: :strong
+				max_retries: 1
+				retry_interval: 0
   options:
     # Includes the root model name in json serialization. (default: false)
     # include_root_in_json: false

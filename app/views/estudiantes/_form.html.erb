@@ -25,7 +25,9 @@
 		<%= f.input :fecha_nac, as: :date, start_year: 1950 %>
 		<%= f.input :sexo, :as => :radio_buttons, default: :Masculino %>
 		<%= f.input :estado_civil, as: :radio_buttons, default: :Soltero %>
-		<%= f.input :trabaja, as: :boolean %>
+    <div class="checkbox">
+      <%= f.input :trabaja, as: :boolean %>
+    </div>
 		<div id="Empresa">
 			<%= f.input :empresa %>
 			<%= f.input :cargo %>

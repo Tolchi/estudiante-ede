@@ -22,7 +22,16 @@
     <tbody>
       <% @estudiantes.each do |estudiante| %>
         <tr>
-          <td><%= link_to estudiante.name, estudiante, class: 'btn btn-default btn-xs' %></td>
+          <td>
+            <div class="dropdown">
+              <a data-toggle="dropdown" href="#" class="btn btn-default btn-xs"><%= estudiante.name %></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="DatosPersonales">
+                <li><%= link_to 'Mostrar todos los datos', estudiante %></li>
+                <li><%= link_to 'Editar', edit_estudiante_path(estudiante) %></li>
+                <li><%= link_to 'Borrar', estudiante, method: :delete, data: { confirm: 'Estas seguro de borrar?' } %></li>
+              </ul>
+            </div>
+          </td>
           <td><%= estudiante.apellido %></td>
           <td><%= estudiante.direccion %></td>
           <td><%= estudiante.celular %></td>
@@ -32,8 +41,6 @@
           <td><%= estudiante.estado_civil %></td>
           <td><%= estudiante.sexo %></td>
           <td><%= estudiante.talento %></td>
-          <td><%= link_to 'Editar', edit_estudiante_path(estudiante), class: 'btn btn-xs btn-warning' %></td>
-          <td><%= link_to 'Borrar', estudiante, method: :delete, data: { confirm: 'Estas seguro?' }, class: 'btn btn-xs btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>

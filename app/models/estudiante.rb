@@ -1,5 +1,7 @@
 class Estudiante
   include Mongoid::Document
+  include Mongoid::Search
+  include Mongoid::Attributes::Dynamic
   extend Enumerize
   validates :name, :apellido, presence: true
   validates :email, uniqueness: true
@@ -31,7 +33,13 @@ class Estudiante
   field :anio, type: String
   field :talento, type: String
   
+  search_in :name, :apellido, :talento
+  
   def self.column_names
     self.fields.collect { |field| field[0] }
+  end
+  
+  def search
+    self.full_text_search("%#{query}", relevant_search: true)
   end
 end

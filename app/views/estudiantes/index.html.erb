@@ -1,7 +1,18 @@
 <div class="row">
-  <h1>Lista de  estudiantes</h1>
-
-  <%= link_to 'Agregar estudiante', new_estudiante_path, class: 'btn btn-lg btn-primary' %>
+	<div class="page-header">
+		<h1>Lista de  estudiantes</h1>
+	</div>
+	<div class="col-xs-3">
+		<%= form_tag(estudiantes_path, method: "get", id: "search-form", class: 'nav-form navbar nav-left form-inline') do %>
+	  	<%= text_field_tag :search, params[:search], placeholder: "Buscar", class: 'form-control' %>
+	  	<%= submit_tag "Search", name: nil, class: 'btn btn-default btl-lg' %>
+		<% end %>
+	</div>
+	<div class="col-xs-9">
+	  <%= link_to 'Agregar estudiante', new_estudiante_path, class: 'btn btn-lg btn-primary' %>
+	</div>
+</div>
+<div class="row">
   <table class="table table-condensed table-bordered table-hover">
     <thead>
       <tr>

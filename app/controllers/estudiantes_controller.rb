@@ -6,7 +6,11 @@ class EstudiantesController < ApplicationController
   # GET /estudiantes.json
   # GET /estudiantes.xlsx
   def index
-    @estudiantes = Estudiante.all.order_by(sort_column + ' ' + sort_direction)
+    if params[:search]
+      @estudiantes = Estudiante.search(params[:search])
+    else
+      @estudiantes = Estudiante.all.order_by(sort_column + ' ' + sort_direction)
+    end
   end
 
   # GET /estudiantes/1

@@ -46,3 +46,4 @@ gem 'jquery-turbolinks'
 gem 'mongoid-sadstory'
 gem 'axlsx_rails'
 gem 'irbtools', group: :development
+gem 'mongoid_search'

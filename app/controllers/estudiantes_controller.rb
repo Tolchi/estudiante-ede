@@ -6,7 +6,7 @@ class EstudiantesController < ApplicationController
   # GET /estudiantes.json
   # GET /estudiantes.xlsx
   def index
-    if params[:search]
+    if params[:search]  && params[:search] != ''
       @estudiantes = Estudiante.search(params[:search])
     else
       @estudiantes = Estudiante.all.order_by(sort_column + ' ' + sort_direction)
@@ -77,7 +77,9 @@ class EstudiantesController < ApplicationController
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_estudiante
-      @estudiante = Estudiante.find(params[:id])
+      if params[:id]
+        @estudiante = Estudiante.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

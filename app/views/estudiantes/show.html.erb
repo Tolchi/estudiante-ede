@@ -56,7 +56,7 @@
 
 <p>
   <strong>Fecha de Nacimiento:</strong>
-  <%= @estudiante.fecha_nac %>
+  <%= @estudiante.fecha_nac.strftime("%d/%b/%Y") %>
 </p>
 <p>
   <strong>Estado civil:</strong>
